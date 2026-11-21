@@ -1,0 +1,86 @@
+:root {
+    color-scheme: light;
+    --bg: #f3f6f4;
+    --text: #40554f;
+    --text-h: #132e27;
+    --border: #d7e3dc;
+    --accent: #17664d;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#root { width: 100%; border: 0; text-align: left; }
+.site-header { background: #fff; border-bottom: 1px solid var(--border); }
+.site-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px 28px; max-width: 1240px; margin: auto; padding: 14px 24px;
+}
+.brand { display: inline-flex; align-items: center; gap: 8px; font-size: 1.2rem; font-weight: 800; }
+.site-nav a { color: var(--text-h); text-decoration: none; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 7px 16px; font-size: .9rem; }
+.nav-links a.active { color: var(--accent); text-decoration: underline; text-underline-offset: 5px; }
+.site-content { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 64px; overflow-wrap: anywhere; }
+.site-content h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.06; margin: 0 0 18px; }
+.site-content h2 { font-size: 1.25rem; }
+.account-page { display: grid; justify-items: center; padding: clamp(12px, 5vw, 60px) 0; }
+.account-card {
+    box-sizing: border-box; width: min(100%, 520px); padding: clamp(18px, 4vw, 40px);
+    background: white; border: 1px solid var(--border); border-radius: 20px;
+    box-shadow: 0 12px 42px rgba(19, 46, 39, .08);
+}
+.account-description { margin-bottom: 24px; }
+.account-card form, .profile-page form { display: grid; gap: 13px; }
+.account-card label { display: block; color: var(--text-h); font-size: .9rem; font-weight: 600; }
+.account-card input, .account-card select, .account-card textarea {
+    display: block; box-sizing: border-box; width: 100%; margin-top: 5px;
+    border: 1px solid #a8bbb1; border-radius: 8px; padding: 10px 12px;
+    font: inherit; color: var(--text-h); background: #fff;
+}
+.account-card textarea { min-height: 80px; resize: vertical; }
+.account-card p { line-height: 1.55; }
+.account-links { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 16px; }
+.account-links a, .text-button { color: var(--accent); }
+.text-button { border: 0; padding: 0; background: transparent; font: inherit; cursor: pointer; }
+.primary, .site-nav a.primary {
+    display: inline-flex; justify-content: center; align-items: center; padding: 10px 16px; min-height: 42px;
+    box-sizing: border-box; border: 0; border-radius: 9px; background: #17664d; color: #fff;
+    font: inherit; font-weight: 650; text-decoration: none; cursor: pointer;
+}
+.primary:hover { background: #124c3a; }
+button:disabled { opacity: .65; cursor: wait; }
+:focus-visible { outline: 3px solid #53988a; outline-offset: 2px; }
+.notice { border-radius: 8px; padding: 8px 12px; margin: 0; font-size: .9rem; }
+.notice.error { color: #881c20; background: #fff0f0; }
+.notice.success { color: #144d38; background: #e5f5ea; }
+.site-header > .notice { text-align: center; }
+.profile-page { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 20px; }
+.profile-page > h1 { grid-column: 1 / -1; }
+.profile-page > form { width: 100%; }
+.profile-page > div { grid-row: 3; grid-column: 1 / -1; background: white; }
+.profile-page form br { display: none; }
+.route-status { padding: 24px; }
+.parking-hero {
+    display: grid; align-content: center; min-height: 240px; margin-bottom: 28px; padding: clamp(24px, 6vw, 65px);
+    border-radius: 20px; background: radial-gradient(ellipse at right, #276b56, #132e27 74%); color: white;
+}
+.parking-hero h1 { color: white; max-width: 650px; }
+.parking-hero p { margin: 0; max-width: 580px; color: #dcede5; }
+@media (max-width: 680px) {
+    .site-nav { padding: 12px 16px; }
+    .nav-links { gap: 8px 13px; }
+    .profile-page { grid-template-columns: 1fr; }
+    .profile-page > div { grid-row: auto; }
+}
+
+.nav-notifications { display: inline-flex; align-items: center; gap: 5px; }
+.notification-badge { border-radius: 999px; padding: 1px 6px; background: #17664d; color: #fff; font-size: .7rem; font-weight: 750; }
+.notification-card .owner-heading { margin-bottom: 4px; }
+.notification-card.is-unread { border-left: 4px solid #17664d; }
+.notification-card time { color: #526c61; font-size: .85rem; }
+.notification-actions { margin-top: 9px; }
+.profile-page .account-card h2 { margin-top: 0; }
+.profile-page .account-card label { margin-top: 3px; }
+button:disabled { cursor: not-allowed; }
+
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 50; padding: 9px 14px; background: #fff; color: #134836; border-radius: 8px; }
+.skip-link:focus { top: 10px; }
+@media (max-width: 620px) { .site-content { padding-top: 16px; } .nav-links { row-gap: 10px; } }
