@@ -1,0 +1,52 @@
+.admin-workspace { display: grid; grid-template-columns: 202px minmax(0, 1fr); gap: 18px; align-items: start; }
+.admin-sidebar { border: 1px solid var(--border); border-radius: 14px; background: #fff; padding: 10px; position: sticky; top: 12px; }
+.admin-sidebar nav { display: grid; gap: 3px; }
+.admin-sidebar a { display: flex; align-items: center; gap: 9px; border-radius: 8px; padding: 8px 10px; font-weight: 650; font-size: .87rem; text-decoration: none; color: #23463a; }
+.admin-sidebar a.admin-nav-selected { background: #dfeee5; color: #16543f; }
+.admin-header h1 { margin: 0 0 13px; }
+.admin-header p { color: #536e61; margin: 0 0 5px; font-size: .87rem; }
+.admin-content { min-width: 0; }
+.admin-panel, .admin-dialog { border: 1px solid var(--border); border-radius: 15px; background: #fff; padding: clamp(12px, 2.5vw, 22px); color: #244438; }
+.admin-panel { margin-bottom: 14px; min-width: 0; }
+.admin-panel > h2, .admin-chart h2 { margin: 0 0 9px; }
+.admin-actions, .admin-filters { display: flex; align-items: end; gap: 9px; flex-wrap: wrap; margin-bottom: 13px; }
+.admin-metrics, .admin-chart-grid { display: grid; gap: 12px; margin-bottom: 14px; }
+.admin-metrics { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); }
+.admin-chart-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.admin-chart-grid > :last-child { grid-column: 1 / -1; }
+.admin-metrics .admin-panel { display: grid; margin: 0; gap: 8px; }
+.admin-metrics strong { font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.2; color: #134836; }
+.admin-chart > p, .admin-metrics span, .admin-empty { color: #526c61; font-size: .88rem; margin: 0 0 8px; }
+.admin-chart-key { display: flex; gap: 8px 12px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
+.admin-chart-key li { display: flex; align-items: center; gap: 5px; font-size: .8rem; }
+.admin-chart-key span { display: inline-block; width: 9px; height: 9px; border-radius: 50%; }
+.admin-filters label, .admin-form label { display: grid; gap: 4px; font-weight: 650; font-size: .87rem; }
+.admin-filters label { flex: 1 1 160px; max-width: 380px; }
+.admin-content input:not([type=checkbox]), .admin-content select, .admin-content textarea, .admin-dialog textarea {
+    box-sizing: border-box; background: #fff; color: #17372f; border: 1px solid #a9c1b5; border-radius: 8px;
+    padding: 7px 9px; font: inherit;
+}
+.admin-form { margin: 12px 0; display: grid; gap: 8px; }
+.admin-form button { justify-self: start; }
+.admin-table { overflow: auto; }
+.admin-table table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: .84rem; }
+.admin-table th, .admin-table td { text-align: left; vertical-align: top; padding: 9px 8px; border-bottom: 1px solid var(--border); }
+.admin-table th { background: #eff6f1; color: #23483a; }
+.admin-table small { display: block; overflow-wrap: anywhere; }
+.admin-content button:not(.primary), .admin-dialog button:not(.primary) {
+    border: 1px solid #bad1c4; border-radius: 8px; background: #f6fbf8; color: #174b3b;
+    font: inherit; font-size: .83rem; font-weight: 650; padding: 6px 10px; cursor: pointer;
+}
+.admin-content .notice, .admin-dialog .notice { margin: 8px 0; }
+.admin-dialog { width: min(86vw, 790px); max-height: 85vh; overflow: auto; }
+.admin-dialog::backdrop { background: rgb(14 38 31 / .55); }
+.admin-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.admin-dialog h2, .admin-report h3 { margin: 0; }
+.admin-dialog dt { font-size: .83rem; color: #526c61; }
+.admin-dialog dd { margin: 0; font-weight: 650; overflow-wrap: anywhere; }
+.admin-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr)); gap: 9px; margin: 12px 0; }
+.admin-photos img { width: 100%; height: 135px; object-fit: cover; border-radius: 8px; }
+.admin-report { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+.admin-checkbox { display: inline-flex; align-items: center; gap: 6px; }
+@media (max-width: 860px) { .admin-workspace { grid-template-columns: minmax(0, 1fr); } .admin-sidebar { position: static; } .admin-sidebar nav { display: flex; flex-wrap: wrap; } }
+@media (max-width: 620px) { .admin-chart-grid { grid-template-columns: minmax(0, 1fr); } .admin-sidebar a { padding: 5px 6px; font-size: .8rem; } }
